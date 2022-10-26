@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://safalthapaliya.com.np/sitemap.xml
