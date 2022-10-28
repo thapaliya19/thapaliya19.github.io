@@ -14,10 +14,39 @@ minify:
   disableXML: true
   minifyOutput: true
 
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+    contentDir: content/english
+  np:
+    languageName: नेपाली
+    title: सफल थपालिया
+    weight: 2
+    contentDir: content/nepali
+    menu:
+      main:
+        - name: परिचय
+          url: /about/
+          weight: 0
+    profileMode:
+      enabled: true # needs to be explicitly set
+      title: सफल थपालिया 
+      subtitle: "मेशिन लर्निंग शिक्षार्थी, सिकारु अनुसन्धाता, कुलर"
+      imageUrl: "safal.jpg"
+      imageWidth: 120
+      imageHeight: 120
+      imageTitle: my image
+      buttons:
+        - name: परिचय
+          url: about
+
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Safal Thapaliya
-  description: "Personal webpage of Safal Thapaliya"
+  description: "Personal website of Safal Thapaliya"
   keywords: [Blog, Portfolio, Safal Thapaliya]
   author: Safal Thapaliya
   # author: ["Me", "You"] # multiple authors
