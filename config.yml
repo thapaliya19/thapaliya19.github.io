@@ -23,8 +23,8 @@ params:
   # author: ["Me", "You"] # multiple authors
   images: ["safal.png"]
   DateFormat: "January 2, 2006"
-  defaultTheme: light # dark, light
-  disableThemeToggle: true
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
 
   ShowReadingTime: true
   ShowShareButtons: false
