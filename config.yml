@@ -17,7 +17,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Safal Thapaliya
-  description: "Safal Thapaliya - Research Assistant at NAAMII"
+  description: "Personal webpage of Safal Thapaliya"
   keywords: [Blog, Portfolio, Safal Thapaliya]
   author: Safal Thapaliya
   # author: ["Me", "You"] # multiple authors
@@ -27,7 +27,7 @@ params:
   disableThemeToggle: true
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
@@ -87,6 +87,8 @@ params:
       url: "https://scholar.google.com/citations?user=0yl8rVYAAAAJ&hl=en&oi=ao"
     - name: researchgate
       url: "https://www.researchgate.net/profile/Safal-Thapaliya-2"
+    - name: email
+      url: "mailto:hello@safalthapaliya.com.np"
   # analytics:
   #   google:
   #     SiteVerificationTag: "XYZabc"
