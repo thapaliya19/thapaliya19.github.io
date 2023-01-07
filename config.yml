@@ -29,11 +29,14 @@ languages:
       main:
         - name: परिचय
           url: /about/
+          weight: 1
+        - name: बिबिध
+          url: /posts/
           weight: 0
     profileMode:
       enabled: true # needs to be explicitly set
       title: सफल थपालिया 
-      subtitle: "मेशिन लर्निंग शिक्षार्थी, सिकारु अनुसन्धाता, कुलर"
+      subtitle: "डिप लर्निंग शिक्षार्थी, सिकारु अनुसन्धाता, कुलर"
       imageUrl: "safal.jpg"
       imageWidth: 120
       imageHeight: 120
@@ -89,7 +92,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: Safal Thapaliya
-    subtitle: "Machine Learning enthusiast, Research neophyte, Culer"
+    subtitle: "Deep Learning enthusiast, Research neophyte, Culer"
     imageUrl: "safal.jpg"
     imageWidth: 120
     imageHeight: 120
