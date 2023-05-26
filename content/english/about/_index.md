@@ -1,5 +1,5 @@
 # About
-Hello there. I am Safal Thapaliya. I am a Research Assistant at [NepAl Applied Mathematics and Informatics Institute for research(NAAMII)](https://naamii.org.np/). Here, I’m engaged in research involving Object Detection in low-resource settings.
+Hello there. I am Safal Thapaliya. I am a Research Assistant at [NepAl Applied Mathematics and Informatics Institute for research(NAAMII)](https://naamii.org.np/). Here, I’m engaged in research involving computer vision problems in low-resource settings.
 
 I’ve previously worked at [Clamphook](https://clamphook.com/) as a backend developer. I also interned at [Logpoint](https://www.logpoint.com/) in the Customer Support and Solutions division.
 
