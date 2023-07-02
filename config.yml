@@ -20,30 +20,30 @@ languages:
     languageName: English
     weight: 1
     contentDir: content/english
-  np:
-    languageName: नेपाली
-    title: सफल थपालिया
-    weight: 2
-    contentDir: content/nepali
-    menu:
-      main:
-        - name: परिचय
-          url: /about/
-          weight: 1
-        - name: बिबिध
-          url: /posts/
-          weight: 0
-    profileMode:
-      enabled: true # needs to be explicitly set
-      title: सफल थपालिया 
-      subtitle: "डिप लर्निंग शिक्षार्थी, सिकारु अनुसन्धाता, कुलर"
-      imageUrl: "safal.jpg"
-      imageWidth: 120
-      imageHeight: 120
-      imageTitle: my image
-      buttons:
-        - name: परिचय
-          url: about
+  # np:
+  #   languageName: नेपाली
+  #   title: सफल थपालिया
+  #   weight: 2
+  #   contentDir: content/nepali
+  #   menu:
+  #     main:
+  #       - name: परिचय
+  #         url: /about/
+  #         weight: 1
+  #       - name: बिबिध
+  #         url: /posts/
+  #         weight: 0
+  #   profileMode:
+  #     enabled: true # needs to be explicitly set
+  #     title: सफल थपालिया 
+  #     subtitle: "डिप लर्निंग शिक्षार्थी, सिकारु अनुसन्धाता, कुलर"
+  #     imageUrl: "safal.jpg"
+  #     imageWidth: 120
+  #     imageHeight: 120
+  #     imageTitle: my image
+  #     buttons:
+  #       - name: परिचय
+  #         url: about
 
 
 params:
@@ -165,6 +165,10 @@ menu:
       name: projects
       url: /projects/
       weight: 30
+    - identifier: cv
+      name: CV
+      url: /cv/cv.pdf
+      weight: 40
     # - identifier: example
     #   name: example.org
     #   url: https://example.org
