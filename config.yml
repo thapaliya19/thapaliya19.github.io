@@ -91,8 +91,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: Safal Thapaliya
-    subtitle: "Deep Learning enthusiast, Research neophyte, Culer"
+    title: Hello there 👋. I'm Safal Thapaliya.
+    subtitle: "Research Assistant at [NAAMII](https://naamii.org.np/), working on computer vision applications in medical imaging."
     imageUrl: "safal.jpg"
     imageWidth: 120
     imageHeight: 120
@@ -119,6 +119,8 @@ params:
       url: "https://scholar.google.com/citations?user=0yl8rVYAAAAJ&hl=en&oi=ao"
     - name: researchgate
       url: "https://www.researchgate.net/profile/Safal-Thapaliya-2"
+    - name: orcid
+      url: "https://orcid.org/0000-0002-4463-6700"
     - name: email
       url: "mailto:hello@safalthapaliya.com.np"
   # analytics:
@@ -159,6 +161,10 @@ menu:
       name: publications
       url: /publications/
       weight: 20
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 30
     # - identifier: example
     #   name: example.org
     #   url: https://example.org
