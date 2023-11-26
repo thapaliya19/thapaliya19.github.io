@@ -1,3 +1,4 @@
 User-agent: *
 Disallow:
-Sitemap: https://thapaliya19.github.io/sitemap.xml
+
+Sitemap: https://thapaliya19.github.io//sitemap.xml
