@@ -2,18 +2,18 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Safal Thapaliya
+    - name: Address
+      value: Kathmandu, Nepal
     - name: Languages
-      value: English, German
+      value: English, Nepali, Hindi
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Bachelors in Computer Engineering
+      institution: Institute of Engineering, Pulchowk Campus, Tribhuvan University
+      year: 2017-2021
       description:
         - Description 1.
         - Description 2.
