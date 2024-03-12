@@ -45,6 +45,15 @@ layout: default
               {{ page.profile.address }}
             </div>
             {%- endif %}
+            
+            {%- if page.profile.cv %}
+            <div class="address">
+              {%- assign cv_path = page.profile.cv | prepend: 'assets/pdf/' -%}
+
+              Find my <a href="{{ cv_path }}">CV here.</a>
+            </div>
+            {%- endif %}
+            
           </div>
           {%- endif %}
 
