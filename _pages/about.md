@@ -29,7 +29,7 @@ I hold a Bachelor's Degree in Computer Engineering from the [Institute of Engine
 My bachelor's thesis was supervised by [Aman Shakya, Ph.D](https://lict.ioe.edu.np/profile/aman/) and [Bishesh Khanal, Ph.D](https://bishesh.github.io/).
 
 I’ve previously worked at [Clamphook](https://clamphook.com/), where I was responsible for designing databases, writing REST APIs, and website deployment. 
-I also interned at [Logpoint](https://www.logpoint.com/) in the Customer Support and Solutions division, where I learned to use different tools and techniques for linux system administration.
+I also interned at [Logpoint Inc.](https://www.logpoint.com/) in the Customer Support and Solutions division, where I learned to use different tools and techniques for linux system administration.
 
 
 In my leisure, I love to play and watch football ⚽.
