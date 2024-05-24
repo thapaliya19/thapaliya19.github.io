@@ -22,8 +22,8 @@ Hello there! I'm Safal Thapaliya. I am a Research Assistant at [Nepal Applied Ma
 <!-- My primary research interests lies in vision-language models, and its applications in medical imaging. -->
 <!-- Besides that, I am interested in object detection and image segmentation in low-resource settings. -->
 At NAAMII, my primary research focuses on computer vision applications in medical imaging, under the supervision of [Bishesh Khanal, Ph.D](https://bishesh.github.io/). 
-My research interests lie in vision-language models, mechanistic interpretability and explainable AI.
-Lately, I have been exploring on ways to leverage vision-language models for explainable and interpretable medical image segmentation.
+My research interests lie in multi-modal learning, self-supervised learning, and medical image analysis.
+Lately, I have been exploring self-supervised contrastive pre-training for modality-agnostic medical image analysis.
 
 I hold a Bachelor's Degree in Computer Engineering from the [Institute of Engineering, Pulchowk Campus](https://pcampus.edu.np/).
 My bachelor's thesis was supervised by [Aman Shakya, Ph.D](https://lict.ioe.edu.np/profile/aman/) and [Bishesh Khanal, Ph.D](https://bishesh.github.io/).
