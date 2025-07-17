@@ -26,11 +26,11 @@
   pdf: "https://arxiv.org/pdf/2308.07706"
   code: "https://github.com/naamiinepal/medvlsm"
 
-- authors: Rabin Adhikari\*, Manish Dhakal\*, **Safal Thapaliya**\*, Kanchan Poudel, Prasiddha Bhandari, Bishesh Khanal
-  year: 2023
-  title: "Synthetic boost: Leveraging synthetic data for enhanced vision-language segmentation in echocardiography"
-  venue: "International Workshop on Advances in Simplifying Medical Ultrasound (ASMUS 2023)"
-  note: MICCAI 2023 Workshop
-  link: "https://link.springer.com/chapter/10.1007/978-3-031-44521-7_9"
-  pdf: "https://arxiv.org/pdf/2309.12829"
-  code: "https://github.com/naamiinepal/synthetic-boost"
+# - authors: Rabin Adhikari\*, Manish Dhakal\*, **Safal Thapaliya**\*, Kanchan Poudel, Prasiddha Bhandari, Bishesh Khanal
+#   year: 2023
+#   title: "Synthetic boost: Leveraging synthetic data for enhanced vision-language segmentation in echocardiography"
+#   venue: "International Workshop on Advances in Simplifying Medical Ultrasound (ASMUS 2023)"
+#   note: MICCAI 2023 Workshop
+#   link: "https://link.springer.com/chapter/10.1007/978-3-031-44521-7_9"
+#   pdf: "https://arxiv.org/pdf/2309.12829"
+#   code: "https://github.com/naamiinepal/synthetic-boost"

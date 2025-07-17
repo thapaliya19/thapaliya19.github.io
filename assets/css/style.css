@@ -47,45 +47,31 @@ html.light {
     html { padding: 0.5em; }
   }
   
-  /* 4. Style the toggle button */
-  #theme-toggle {
+/* ────── Theme‑toggle icon ────── */
+#theme-toggle {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background: none;
-    border: 1px solid var(--fg);
-    color: var(--fg);
-    padding: 0.25em 0.5em;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 2px solid var(--fg);
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-family: inherit;
   }
-
-  @media (max-width: 600px) {
-    #theme-toggle {
-      /* force it into a circle and hide text */
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-indent: -9999px;
-      overflow: hidden;
-    }
-    #theme-toggle::before {
-      content: "";
-      display: block;
-      width: 1.2rem;      /* icon diameter */
-      height: 1.2rem;
-      background: linear-gradient(
-        90deg,
-        #fff 50%,
-        #000 50%
-      );
-      border-radius: 50%;
-    }
-  }
+  
+  /* half‑white/half‑black circle */
+  #theme-toggle::before {
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    background: linear-gradient(90deg, #fff 50%, #000 50%);
+    border-radius: 50%;
+  }  
   
   
 

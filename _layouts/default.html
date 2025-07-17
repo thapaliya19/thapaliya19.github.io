@@ -19,8 +19,33 @@
 
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a href="https://perfectmotherfuckingwebsite.com/">here</a>.</p>
-  <!-- theme toggle -->
-  <button id="theme-toggle">Toggle Theme</button>
+  
+  <!-- theme toggle button -->
+  <button id="theme-toggle" aria-label="Toggle theme"></button>
+
+  <script>
+    (function(){
+      const btn  = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      // 1. default to light unless user saved dark
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.add('light');
+      }
+      // 2. on click, flip light<->dark and persist
+      btn.addEventListener('click', () => {
+        if (root.classList.contains('dark')) {
+          root.classList.replace('dark','light');
+          localStorage.setItem('theme','light');
+        } else {
+          root.classList.replace('light','dark');
+          localStorage.setItem('theme','dark');
+        }
+      });
+    })();
+  </script>
 
   <!-- open all links in new tab -->
   <script>
@@ -34,44 +59,6 @@
         }
       });
     });
-  </script>
-  <script>
-    (function() {
-      const btn = document.getElementById('theme-toggle');
-      const root = document.documentElement;
-
-      // 1. Determine initial theme: stored → system → default to light
-      const stored = localStorage.getItem('theme');
-      if (stored === 'light' || stored === 'dark') {
-        root.classList.add(stored);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.classList.add('dark');
-      } else {
-        root.classList.add('light');
-      }
-
-      // 2. Update button text based on current class
-      function updateBtn() {
-        if (root.classList.contains('dark')) {
-          btn.textContent = 'Switch to Light Mode';
-        } else {
-          btn.textContent = 'Switch to Dark Mode';
-        }
-      }
-      updateBtn();
-
-      // 3. Toggle and persist
-      btn.addEventListener('click', () => {
-        if (root.classList.contains('dark')) {
-          root.classList.replace('dark','light');
-          localStorage.setItem('theme','light');
-        } else {
-          root.classList.replace('light','dark');
-          localStorage.setItem('theme','dark');
-        }
-        updateBtn();
-      });
-    })();
   </script>
 </body>
 </html>
