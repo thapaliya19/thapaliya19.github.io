@@ -12,3 +12,5 @@ gem "kramdown", "~> 2.4"
 # Uncomment any plugins you add to _config.yml
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
+
+gem "jekyll-multiple-languages-plugin"

@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Safal Thapaliya
+lang: en
+permalink: /
 ---
 
 ![Profile Image](/assets/img/profile.jpg){: .profile-img }

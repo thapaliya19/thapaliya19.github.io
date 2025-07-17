@@ -19,12 +19,21 @@
 
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a href="https://perfectmotherfuckingwebsite.com/">here</a>.</p>
+    {% if page.lang == 'en' %}
+      <a href="/ne/" class="lang-btn" aria-label="Switch to Nepali">ने</a>
+    {% else %}
+      <a href="/"   class="lang-btn" aria-label="Switch to English">En</a>
+    {% endif %}
+    </footer>
   
   <!-- theme toggle button -->
   <button id="theme-toggle" aria-label="Toggle theme"></button>
+    <!-- language toggle -->
+    <!-- Language switcher -->
 
   <script>
     (function(){
+        
       const btn  = document.getElementById('theme-toggle');
       const root = document.documentElement;
       // 1. default to light unless user saved dark
@@ -47,16 +56,16 @@
     })();
   </script>
 
-  <!-- open all links in new tab -->
+  <!-- open external links in new tab, but skip language switcher -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll('a').forEach(a => {
-        // skip internal anchors
         const href = a.getAttribute('href') || "";
-        if (!href.startsWith("#")) {
-          a.setAttribute('target', '_blank');
-          a.setAttribute('rel', 'noopener noreferrer');
-        }
+        // skip anchors and our language‑switcher buttons
+        if (href.startsWith("#") || a.classList.contains('lang-btn')) return;
+
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
       });
     });
   </script>

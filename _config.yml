@@ -4,8 +4,18 @@ email: safalthapaliya@gmail.com
 description: "Ph.D. student | Graph Neural Networks, Large Language Models, Multi‑modal learning & medical imaging"
 baseurl: ""            # when deploying to https://<username>.github.io or your own domain
 url: "https://safalthapaliya.com.np"
+
+# tell Jekyll about our two langs:
+languages:    ["en","ne"]
+default_lang: "en"
+
 markdown: kramdown
 theme: null            # we’re rolling our own layout/CSS
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# don’t accidentally include your Nepali source in the English root:
+exclude:
+  - "_i18n"

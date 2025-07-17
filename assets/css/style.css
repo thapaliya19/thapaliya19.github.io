@@ -18,12 +18,12 @@
 html.light {
     --bg:   #ffffff;
     --fg:   #000000;
-    --link: #0066cc;
+    --link: #307943;
   }
   html.dark {
-    --bg:   #181818;
+    --bg:   #302e2e;
     --fg:   #e0e0e0;
-    --link: #539bf5;
+    --link: #32a852;
   }
   
   /* 3. Base rules use the vars */
@@ -152,3 +152,27 @@ footer {
     text-decoration: underline;
   }
   
+/* ─── Footer & language switcher ─── */
+.site-footer {
+    margin-top: 4em;             /* space before footer */
+    padding: 1em 0;
+    text-align: center;
+    border-top: 1px solid var(--fg);
+  }
+  
+  .site-footer .lang-btn {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    border: 2px solid var(--fg);
+    border-radius: 0.25rem;
+    background: transparent;
+    color: var(--fg);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .site-footer .lang-btn:hover {
+    background: var(--fg);
+    color: var(--bg);
+  }
