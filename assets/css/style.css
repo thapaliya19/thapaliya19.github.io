@@ -1,0 +1,168 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* 1. Define light & dark theme vars on :root */
+:root {
+    --bg: #fff;
+    --fg: #000;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --fg: #fff;
+    }
+  }
+  
+  /* 2. When the user explicitly chooses, we add .light or .dark to <html> */
+/* Explicit overrides for toggle */
+html.light {
+    --bg:   #ffffff;
+    --fg:   #000000;
+    --link: #0066cc;
+  }
+  html.dark {
+    --bg:   #181818;
+    --fg:   #e0e0e0;
+    --link: #539bf5;
+  }
+  
+  /* 3. Base rules use the vars */
+  html {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', system-ui, -apple-system, Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    max-width: 40em;
+    margin: auto;
+    padding: 1em;
+  }
+  a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    background: transparent;
+
+  }
+  @media (max-width: 600px) {
+    html { padding: 0.5em; }
+  }
+  
+  /* 4. Style the toggle button */
+  #theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: 1px solid var(--fg);
+    color: var(--fg);
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  @media (max-width: 600px) {
+    #theme-toggle {
+      /* force it into a circle and hide text */
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+    #theme-toggle::before {
+      content: "";
+      display: block;
+      width: 1.2rem;      /* icon diameter */
+      height: 1.2rem;
+      background: linear-gradient(
+        90deg,
+        #fff 50%,
+        #000 50%
+      );
+      border-radius: 50%;
+    }
+  }
+  
+  
+
+/* Base avatar: square with softly rounded corners */
+.profile-img {
+    display: block;
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    border-radius: 0.5rem;    /* <-- was 50% (circle), now rounded square */
+    margin: 0 auto 1em;
+    border: 2px solid var(--fg);
+  }
+  
+  /* Larger screens: float + bigger square with same corner radius */
+  @media (min-width: 600px) {
+    html {
+      max-width: 60em;
+    }
+  
+    .profile-img {
+      float: left;
+      width: 8em;
+      height: 8em;
+      margin: 0 1.5em 1em 0;
+      object-fit: cover;
+      border-radius: 0.5rem;  /* <-- match the base rule */
+    }
+  }
+  
+/* footer styling */
+footer {
+    margin: 40px 0 20px;
+    padding-top: 20px;
+    border-top: 1px solid currentColor;
+    font-size: 14px;
+    text-align: center;
+    color: inherit;
+  }
+/* ── Publication “cards” ── */
+/* bottom of assets/css/style.css */
+
+.pub-entry {
+    margin: 1.5em 0;
+    padding-left: 0.75em;
+    border-left: 2px solid var(--fg);
+    font-size: 0.9em;
+  }
+  .pub-title,
+  .pub-authors,
+  .pub-venue,
+  .pub-links {
+    margin: 0.2em 0;
+  }
+  
+  /* markdownify wraps your authors in <p>…</p>, so zero out its margin: */
+  .pub-authors p {
+    margin: 0;
+  }
+  
+  .pub-authors strong {
+    font-weight: bold;  /* your name will appear bold */
+  }
+
+  .pub-note {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 0.2em;
+    color: var(--fg);
+  }
+  
+  .pub-links {
+    display: flex;
+    gap: 0.5em;
+  }
+  .pub-links a {
+    color: var(--link);
+    text-decoration: underline;
+  }
+  

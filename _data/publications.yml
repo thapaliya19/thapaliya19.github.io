@@ -1,0 +1,36 @@
+# _data/publications.yml
+
+- authors: Rabin Adhikari, **Safal Thapaliya**, Manish Dhakal, Bishesh Khanal
+  year: 2024
+  title: "TuneVLSeg: Prompt Tuning Benchmark for Vision-Language Segmentation Models"
+  venue: Asian Conference on Computer Vision (ACCV 2024)
+  link: https://openaccess.thecvf.com/content/ACCV2024/html/Adhikari_TuneVLSeg_Prompt_Tuning_Benchmark_for_Vision-Language_Segmentation_Models_ACCV_2024_paper.html
+  pdf: https://openaccess.thecvf.com/content/ACCV2024/papers/Adhikari_TuneVLSeg_Prompt_Tuning_Benchmark_for_Vision-Language_Segmentation_Models_ACCV_2024_paper.pdf
+  code: https://github.com/naamiinepal/tunevlseg
+  note: Oral Presentation
+
+- authors: Manish Dhakal, Rabin Adhikari, **Safal Thapaliya**, Bishesh Khanal
+  year: 2024
+  title: "Vlsm-adapter: Finetuning vision-language segmentation efficiently with lightweight blocks"
+  venue: "International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI 2024)"
+  link: "https://link.springer.com/chapter/10.1007/978-3-031-72114-4_68"
+  pdf: "https://arxiv.org/pdf/2405.06196"
+  code: "https://github.com/naamiinepal/vlsm-adapter"
+
+- authors: Kanchan Poudel\*, Manish Dhakal\*, Prasiddha Bhandari\*, Rabin Adhikari\*, **Safal Thapaliya**\*, Bishesh Khanal
+  year: 2024
+  title: "Exploring Transfer Learning in Medical Image Segmentation using VLMs"
+  venue: "Medical Imaging in Deep Learning 2024"
+  note: Oral Presentation
+  link: "https://arxiv.org/abs/2308.07706"
+  pdf: "https://arxiv.org/pdf/2308.07706"
+  code: "https://github.com/naamiinepal/medvlsm"
+
+- authors: Rabin Adhikari\*, Manish Dhakal\*, **Safal Thapaliya**\*, Kanchan Poudel, Prasiddha Bhandari, Bishesh Khanal
+  year: 2023
+  title: "Synthetic boost: Leveraging synthetic data for enhanced vision-language segmentation in echocardiography"
+  venue: "International Workshop on Advances in Simplifying Medical Ultrasound (ASMUS 2023)"
+  note: MICCAI 2023 Workshop
+  link: "https://link.springer.com/chapter/10.1007/978-3-031-44521-7_9"
+  pdf: "https://arxiv.org/pdf/2309.12829"
+  code: "https://github.com/naamiinepal/synthetic-boost"

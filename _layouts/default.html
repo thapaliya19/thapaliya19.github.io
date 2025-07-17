@@ -1,63 +1,77 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Title & Description -->
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
 
-  <!-- Head -->
-  <head>
-  {%- if page.redirect -%}
-    <meta http-equiv="refresh" content="3; url={{ site.baseurl }}/" />
-  {%- endif -%}
-  {% include head.html %}
-  </head>
+    <!-- Jekyll SEO Tag -->
+    {% seo %}
+</head>
+<body>
+  <main>
+    {{ content }}
+  </main>
 
-  <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a href="https://perfectmotherfuckingwebsite.com/">here</a>.</p>
+  <!-- theme toggle -->
+  <button id="theme-toggle">Toggle Theme</button>
 
-    <!-- Header -->
-    {%- include header.html %}
+  <!-- open all links in new tab -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('a').forEach(a => {
+        // skip internal anchors
+        const href = a.getAttribute('href') || "";
+        if (!href.startsWith("#")) {
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    });
+  </script>
+  <script>
+    (function() {
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
 
-    <!-- Content -->
-    <div class="container mt-5">
-      {% if page.toc and page.toc.sidebar %}
-        {% if page.toc.sidebar == "right" %}
-        <div class="row">
-          <!-- main content area -->
-          <div class="col-sm-9">
-            {{ content }}
-          </div>
-          <!-- sidebar, which will move to the top on a small screen -->
-          <div class="col-sm-3">
-            <nav id="toc-sidebar" class="sticky-top"></nav>
-          </div>
-        </div>
-        {% else %}
-        <div class="row">
-          <!-- sidebar, which will move to the top on a small screen -->
-          <div class="col-sm-3">
-            <nav id="toc-sidebar" class="sticky-top"></nav>
-          </div>
-          <!-- main content area -->
-          <div class="col-sm-9">
-            {{ content }}
-          </div>
-        </div>
-        {% endif %}
-      {% else %}
-        {{ content }}
-      {% endif %}
-    </div>
+      // 1. Determine initial theme: stored → system → default to light
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') {
+        root.classList.add(stored);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.classList.add('dark');
+      } else {
+        root.classList.add('light');
+      }
 
-    <!-- Footer -->
-    {%- include footer.html %}
+      // 2. Update button text based on current class
+      function updateBtn() {
+        if (root.classList.contains('dark')) {
+          btn.textContent = 'Switch to Light Mode';
+        } else {
+          btn.textContent = 'Switch to Dark Mode';
+        }
+      }
+      updateBtn();
 
-    <!-- JavaScripts -->
-    {% include scripts/jquery.html %}
-    {% include scripts/bootstrap.html %}
-    {% include scripts/masonry.html %}
-    {% include scripts/misc.html %}
-    {% include scripts/badges.html %}
-    {% include scripts/mathjax.html %}
-    {% include scripts/analytics.html %}
-    {% include scripts/progressBar.html %}
-    {% include scripts/wechatModal.html %}
-  </body>
+      // 3. Toggle and persist
+      btn.addEventListener('click', () => {
+        if (root.classList.contains('dark')) {
+          root.classList.replace('dark','light');
+          localStorage.setItem('theme','light');
+        } else {
+          root.classList.replace('light','dark');
+          localStorage.setItem('theme','dark');
+        }
+        updateBtn();
+      });
+    })();
+  </script>
+</body>
 </html>
