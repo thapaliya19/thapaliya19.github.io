@@ -20,7 +20,7 @@ Before joining UConn, I worked at Nepal Applied Mathematics and Informatics Inst
 
 ## Research Interests
 
-I am mainly interested in developing resource-efficient techniques to utilities data of different modalities for resource-constrained settings.
+I am mainly interested in developing resource-efficient techniques to utilize data of different modalities for resource-constrained settings.
 Recently, I am working in leveraging LLMs to describe the topological information of graph data.
 
 ---
