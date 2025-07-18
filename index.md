@@ -5,7 +5,7 @@ lang: en
 permalink: /
 ---
 
-![Profile Image](/assets/img/profile.jpg){: .profile-img }
+![Profile Image](/assets/img/profile.webp){: .profile-img }
 
 # Safal Thapaliya  
 [Email](mailto:safalthapaliya@gmail.com) | [Google Scholar](https://scholar.google.com/citations?user=0yl8rVYAAAAJ) | [LinkedIn](https://www.linkedin.com/in/thapaliya19/) | [GitHub](https://github.com/thapaliya19) | [CV](assets/pdf/safal_cv.pdf)

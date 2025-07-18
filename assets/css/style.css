@@ -1,178 +1,109 @@
 /* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 /* 1. Define light & dark theme vars on :root */
-:root {
-    --bg: #fff;
-    --fg: #000;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #000;
-      --fg: #fff;
-    }
-  }
-  
-  /* 2. When the user explicitly chooses, we add .light or .dark to <html> */
-/* Explicit overrides for toggle */
-html.light {
-    --bg:   #ffffff;
-    --fg:   #000000;
-    --link: #307943;
-  }
-  html.dark {
-    --bg:   #302e2e;
-    --fg:   #e0e0e0;
-    --link: #32a852;
-  }
-  
-  /* 3. Base rules use the vars */
-  html {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Inter', system-ui, -apple-system, Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-    max-width: 40em;
-    margin: auto;
-    padding: 1em;
-  }
-  a {
-    color: var(--link);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-    background: transparent;
 
-  }
-  @media (max-width: 600px) {
-    html { padding: 0.5em; }
-  }
-  
 /* ────── Theme‑toggle icon ────── */
 #theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0;
-    border: 2px solid var(--fg);
-    background: transparent;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  /* half‑white/half‑black circle */
-  #theme-toggle::before {
-    content: "";
-    width: 1.2rem;
-    height: 1.2rem;
-    background: linear-gradient(90deg, #fff 50%, #000 50%);
-    border-radius: 50%;
-  }  
-  
-  
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 2px solid var(--fg);
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 
-/* Base avatar: square with softly rounded corners */
-.profile-img {
-    display: block;
-    width: 6em;
-    height: 6em;
-    object-fit: cover;
-    border-radius: 0.5rem;    /* <-- was 50% (circle), now rounded square */
-    margin: 0 auto 1em;
-    border: 2px solid var(--fg);
-  }
-  
-  /* Larger screens: float + bigger square with same corner radius */
-  @media (min-width: 600px) {
-    html {
-      max-width: 60em;
-    }
-  
-    .profile-img {
-      float: left;
-      width: 8em;
-      height: 8em;
-      margin: 0 1.5em 1em 0;
-      object-fit: cover;
-      border-radius: 0.5rem;  /* <-- match the base rule */
-    }
-  }
-  
+/* half‑white/half‑black circle */
+#theme-toggle::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  background: linear-gradient(90deg, #fff 50%, #000 50%);
+  border-radius: 50%;
+}
+
 /* footer styling */
 footer {
-    margin: 40px 0 20px;
-    padding-top: 20px;
-    border-top: 1px solid currentColor;
-    font-size: 14px;
-    text-align: center;
-    color: inherit;
-  }
+  margin: 40px 0 20px;
+  padding-top: 20px;
+  border-top: 1px solid currentColor;
+  font-size: 14px;
+  text-align: center;
+  color: inherit;
+}
+
 /* ── Publication “cards” ── */
 /* bottom of assets/css/style.css */
 
 .pub-entry {
-    margin: 1.5em 0;
-    padding-left: 0.75em;
-    border-left: 2px solid var(--fg);
-    font-size: 0.9em;
-  }
-  .pub-title,
-  .pub-authors,
-  .pub-venue,
-  .pub-links {
-    margin: 0.2em 0;
-  }
-  
-  /* markdownify wraps your authors in <p>…</p>, so zero out its margin: */
-  .pub-authors p {
-    margin: 0;
-  }
-  
-  .pub-authors strong {
-    font-weight: bold;  /* your name will appear bold */
-  }
+  margin: 1.5em 0;
+  padding-left: 0.75em;
+  border-left: 2px solid var(--fg);
+  font-size: 0.9em;
+}
 
-  .pub-note {
-    font-size: 0.9em;
-    font-style: italic;
-    margin-bottom: 0.2em;
-    color: var(--fg);
-  }
-  
-  .pub-links {
-    display: flex;
-    gap: 0.5em;
-  }
-  .pub-links a {
-    color: var(--link);
-    text-decoration: underline;
-  }
-  
+.pub-title,
+.pub-authors,
+.pub-venue,
+.pub-links {
+  margin: 0.2em 0;
+}
+
+/* markdownify wraps your authors in <p>…</p>, so zero out its margin: */
+.pub-authors p {
+  margin: 0;
+}
+
+.pub-authors strong {
+  font-weight: bold;
+  /* your name will appear bold */
+}
+
+.pub-note {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 0.2em;
+  color: var(--fg);
+}
+
+.pub-links {
+  display: flex;
+  gap: 0.5em;
+}
+
+.pub-links a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
 /* ─── Footer & language switcher ─── */
 .site-footer {
-    margin-top: 4em;             /* space before footer */
-    padding: 1em 0;
-    text-align: center;
-    border-top: 1px solid var(--fg);
-  }
-  
-  .site-footer .lang-btn {
-    display: inline-block;
-    padding: 0.25em 0.75em;
-    border: 2px solid var(--fg);
-    border-radius: 0.25rem;
-    background: transparent;
-    color: var(--fg);
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: background 0.2s, color 0.2s;
-  }
-  .site-footer .lang-btn:hover {
-    background: var(--fg);
-    color: var(--bg);
-  }
+  margin-top: 4em;
+  /* space before footer */
+  padding: 1em 0;
+  text-align: center;
+  border-top: 1px solid var(--fg);
+}
+
+.site-footer .lang-btn {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border: 2px solid var(--fg);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--fg);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.site-footer .lang-btn:hover {
+  background: var(--fg);
+  color: var(--bg);
+}

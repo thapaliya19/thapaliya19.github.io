@@ -1,40 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <!-- Title & Description -->
-  <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
 
-    <!-- Jekyll SEO Tag -->
-    {% seo %}
+
+  <!-- Jekyll SEO Tag -->
+  {% seo %}
+
+  <!-- ─── Critical CSS (inline minimal rules for header/profileswitcher etc) ─── -->
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('{{ "/assets/fonts/Inter-Regular.woff2" | relative_url }}') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('{{ "/assets/fonts/Inter-Bold.woff2" | relative_url }}') format('woff2');
+    }
+
+    :root {
+      --bg: #fff;
+      --fg: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000;
+        --fg: #fff;
+      }
+    }
+
+    /* 2. When the user explicitly chooses, we add .light or .dark to <html> */
+    /* Explicit overrides for toggle */
+    html.light {
+      --bg: #ffffff;
+      --fg: #000000;
+      --link: #307943;
+    }
+
+    html.dark {
+      --bg: #302e2e;
+      --fg: #e0e0e0;
+      --link: #32a852;
+    }
+
+    /* 3. Base rules use the vars */
+    html {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', system-ui, -apple-system, Arial, Helvetica, sans-serif;
+      line-height: 1.4;
+      max-width: 40em;
+      margin: auto;
+      padding: 1em;
+    }
+
+    @media (max-width: 600px) {
+      html {
+        padding: 0.5em;
+      }
+    }
+
+    /* Base avatar: square with softly rounded corners */
+    .profile-img {
+      display: block;
+      width: 6em;
+      height: 6em;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      /* <-- was 50% (circle), now rounded square */
+      margin: 0 auto 1em;
+      border: 2px solid var(--fg);
+    }
+
+    /* Larger screens: float + bigger square with same corner radius */
+    @media (min-width: 600px) {
+      html {
+        max-width: 60em;
+      }
+
+      .profile-img {
+        float: left;
+        width: 8em;
+        height: 8em;
+        margin: 0 1.5em 1em 0;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        /* <-- match the base rule */
+      }
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+      background: transparent;
+
+    }
+  </style>
+
+  <!-- ─── Preload & Deferred Main CSS ─── -->
+  <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
+  <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </noscript>
+
+
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+
 </head>
+
 <body>
   <main>
     {{ content }}
   </main>
 
   <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a href="https://perfectmotherfuckingwebsite.com/">here</a>.</p>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a
+        href="https://perfectmotherfuckingwebsite.com/">the perfect website</a>.</p>
     {% if page.lang == 'en' %}
-      <a href="/ne/" class="lang-btn" aria-label="Switch to Nepali">ने</a>
+    <a href="/ne/" class="lang-btn" aria-label="Switch to Nepali">ने</a>
     {% else %}
-      <a href="/"   class="lang-btn" aria-label="Switch to English">En</a>
+    <a href="/" class="lang-btn" aria-label="Switch to English">En</a>
     {% endif %}
-    </footer>
-  
+  </footer>
+
   <!-- theme toggle button -->
   <button id="theme-toggle" aria-label="Toggle theme"></button>
-    <!-- language toggle -->
-    <!-- Language switcher -->
+  <!-- language toggle -->
+  <!-- Language switcher -->
 
   <script>
-    (function(){
-        
-      const btn  = document.getElementById('theme-toggle');
+    (function () {
+
+      const btn = document.getElementById('theme-toggle');
       const root = document.documentElement;
       // 1. default to light unless user saved dark
       const stored = localStorage.getItem('theme');
@@ -46,11 +157,11 @@
       // 2. on click, flip light<->dark and persist
       btn.addEventListener('click', () => {
         if (root.classList.contains('dark')) {
-          root.classList.replace('dark','light');
-          localStorage.setItem('theme','light');
+          root.classList.replace('dark', 'light');
+          localStorage.setItem('theme', 'light');
         } else {
-          root.classList.replace('light','dark');
-          localStorage.setItem('theme','dark');
+          root.classList.replace('light', 'dark');
+          localStorage.setItem('theme', 'dark');
         }
       });
     })();
@@ -70,4 +181,5 @@
     });
   </script>
 </body>
+
 </html>
