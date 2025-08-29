@@ -18,10 +18,6 @@ I am working on leveraging large language models (LLMs) to generate good represe
 
 Before joining UConn, I worked at Nepal Applied Mathematics and Informatics Institute for research ([NAAMII](https://naamii.org.np/)), supervised by [Bishesh Khanal, Ph.D.](https://bishesh.github.io/), where my primary research focus was on using vision-language models for medical image segmentation.
 
-## Research Interests
-
-I am mainly interested in developing resource-efficient techniques to utilize data of different modalities for resource-constrained settings.
-Recently, I am working in leveraging LLMs to describe the topological information of graph data.
 
 ---
 
