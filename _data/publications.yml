@@ -1,7 +1,7 @@
 # _data/publications.yml
 
 - title: "Semantic Refinement with LLMs for Graph Representations"
-  authors: **Safal Thapaliya**\*, Zehong Wang\*, Jiazheng Li, Ziming Li, Yanfang Ye, Chuxu Zhang
+  authors: '**Safal Thapaliya**\*, Zehong Wang\*, Jiazheng Li, Ziming Li, Yanfang Ye, Chuxu Zhang'
   year: 2025
   venue: arXiv pre-print
   link: "https://arxiv.org/abs/2512.21106"
