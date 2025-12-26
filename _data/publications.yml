@@ -1,5 +1,12 @@
 # _data/publications.yml
 
+- authors: **Safal Thapaliya**\*, Zehong Wang\*, Jiazheng Li, Ziming Li, Yanfang Ye, Chuxu Zhang
+  year: 2025
+  title: "Semantic Refinement with LLMs for Graph Representations"
+  venue: arXiv pre-print
+  link: "https://arxiv.org/abs/2512.21106"
+  pdf: "https://arxiv.org/pdf/2512.21106"
+
 - authors: Rabin Adhikari, **Safal Thapaliya**, Manish Dhakal, Bishesh Khanal
   year: 2024
   title: "TuneVLSeg: Prompt Tuning Benchmark for Vision-Language Segmentation Models"

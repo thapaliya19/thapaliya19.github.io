@@ -13,8 +13,7 @@ permalink: /
 ---
 Hello there! I am Safal Thapaliya. I am a first year PhD student in Computer Science and Engineering at the School of Computing, [University of Connecticut](https://uconn.edu/).
 At UConn, I work in the [MINDS Lab](https://chuxuzhang.github.io/Lab/lab_index.html) supervised by [Prof. Chuxu Zhang](https://chuxuzhang.github.io/).
-My research currently focuses on the intersection of graph learning and large language models.
-I am working on leveraging large language models (LLMs) to generate good representations for text-attributed graphs.
+I am currently working on Large Language Models (LLMs) and Graph Neural Networks (GNNs).
 
 Before joining UConn, I worked at Nepal Applied Mathematics and Informatics Institute for research ([NAAMII](https://naamii.org.np/)), supervised by [Bishesh Khanal, Ph.D.](https://bishesh.github.io/), where my primary research focus was on using vision-language models for medical image segmentation.
 
