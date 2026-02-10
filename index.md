@@ -11,16 +11,26 @@ permalink: /
 [Email](mailto:safalthapaliya@gmail.com) | [Google Scholar](https://scholar.google.com/citations?user=0yl8rVYAAAAJ) | [LinkedIn](https://www.linkedin.com/in/thapaliya19/) | [GitHub](https://github.com/thapaliya19) | [CV](assets/pdf/safal_cv.pdf)
 
 ---
-Hello There! I’m Safal Thapaliya, a second-year PhD student in Computer Science and Engineering at the School of Computing, [University of Connecticut](https://uconn.edu/). I am a member of the [MINDS Lab](https://chuxuzhang.github.io/Lab/lab_index.html), advised by [Prof. Chuxu Zhang](https://chuxuzhang.github.io/).
+Hello there! I’m Safal Thapaliya, a second-year PhD student in Computer Science and Engineering at the [University of Connecticut, Storrs](https://uconn.edu/) ([School of Computing](https://computing.engineering.uconn.edu/)), advised by [Prof. Chuxu Zhang](https://chuxuzhang.github.io/).
 
-My research interests center on large language models (LLMs) and their applications in graph learning and healthcare, with an emphasis on resource-efficient modeling and AI-for-healthcare systems. My current work focuses on trustworthy graph learning, particularly leveraging LLMs to generate semantic-rich node features and improve the robustness of graph neural networks (GNNs) under label noise. I also fine-tune open-source LLMs using LoRA/QLoRA (e.g., via Hugging Face, LLaMA-Factory, and vLLM) to strengthen text representations for downstream graph tasks.
+Research interests and focus:
 
-Prior to joining UConn, I earned my B.E. in Computer Engineering from [IOE, Pulchowk Campus](http://pcampus.edu.np/) (2022). 
-From 2022 to 2024, I worked as a Research Assistant at the [Nepal Applied Mathematics and Informatics Institute for research (NAAMII)](https://naamii.org.np/), supervised by [Dr. Bishesh Khanal](https://bishesh.github.io/). 
-My work there spanned vision-language models (VLMs), medical image segmentation, and self-supervised learning.
-I also developed research prototypes and deployment-ready pipelines for healthcare AI, including AI-assisted smartphone microscopy (in collaboration with [KIAS](https://kias.org.np/)), CT-based lower-limb angle measurement for corrective osteotomy (in collaboration with [Dr. Taman Upadhaya](https://www.linkedin.com/in/tamanupadhaya/)), and a real-time public discourse analysis system.
+* Large language models (LLMs)
+* Resource-efficient models
+* Trustworthiness in graph neural networks (GNNs)
+* AI for healthcare
 
-In addition, I was a founding member and developer of [Clamphook](https://clamphook.com/), a Nepal-based online exam preparation platform, where I designed the system architecture and led backend development and deployment.
+Background:
+
+* B.E. in Computer Engineering, [IOE, Pulchowk Campus](http://pcampus.edu.np/) (2022)
+* Research Assistant at [NAAMII](https://naamii.org.np/) (2022–2024), supervised by [Dr. Bishesh Khanal](https://bishesh.github.io/); collaborated with [KIAS](https://kias.org.np/) and [Dr. Taman Upadhaya](https://www.linkedin.com/in/tamanupadhaya/)
+  * Worked on vision-language models (VLMs), medical image segmentation, and object detection
+  * Built healthcare AI prototypes and deployment-ready pipelines
+
+Other:
+
+* Founding member and developer of [Clamphook](https://clamphook.com/) (2019-2022)
+* Internship at [Logpoint](https://logpoint.com/en/)'s Support and Solutions Department (2022); Linux Server Administration, Distributed Log Handling
 
 ---
 
