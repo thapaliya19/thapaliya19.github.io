@@ -1,7 +1,486 @@
 /* style.css */
-/* 1. Define light & dark theme vars on :root */
 
-/* ────── Theme‑toggle icon ────── */
+/* ─────────────────────────────────────────────────────────────
+   Base typography
+   ───────────────────────────────────────────────────────────── */
+
+main {
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+
+/* Lokta-inspired paper texture for the main (non-Nepali) page */
+html:not([lang="ne"]) {
+  background-image:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%),
+    repeating-linear-gradient(0deg, rgba(80, 60, 40, 0.065) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(90deg, rgba(80, 60, 40, 0.055) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(135deg, rgba(80, 60, 40, 0.05) 0 1px, transparent 1px 10px);
+  background-attachment: fixed;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Nepali "easter egg" theme (ONLY one vibe)
+   ───────────────────────────────────────────────────────────── */
+
+html[lang="ne"].light,
+html[lang="ne"]:not(.dark):not(.light) {
+  --bg: #fbf6ef;
+  --bg-accent: #efe1d1;
+  --fg: #1f1b17;
+  --muted: #5a4f47;
+  --link: #8c2b1d;   /* warm brick */
+  --accent: #a06a36; /* carved wood */
+
+  background-image:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%),
+    /* Lokta-style fiber texture */
+    repeating-linear-gradient(0deg, rgba(80, 60, 40, 0.04) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, rgba(80, 60, 40, 0.03) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(135deg, rgba(80, 60, 40, 0.025) 0 1px, transparent 1px 12px);
+  background-attachment: fixed;
+}
+
+html[lang="ne"].dark {
+  --bg: #1b1613;
+  --bg-accent: #120f0d;
+  --fg: #efe7dd;
+  --muted: #c7bcb1;
+  --link: #d17a5f;
+  --accent: #c08a52;
+
+  background-image:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%),
+    repeating-linear-gradient(0deg, rgba(120, 100, 80, 0.08) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(90deg, rgba(120, 100, 80, 0.06) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(135deg, rgba(120, 100, 80, 0.05) 0 1px, transparent 1px 10px);
+  background-attachment: fixed;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Nepali page layout + type (centered)
+   ───────────────────────────────────────────────────────────── */
+
+html[lang="ne"] main {
+  font-family: 'Noto Serif Devanagari', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  /* Center the page vibe */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Keep content widths tidy while still centered */
+html[lang="ne"] main > * {
+  width: 100%;
+  max-width: 62ch;
+}
+
+/* Headings: Nepali-friendly sans */
+html[lang="ne"] h1,
+html[lang="ne"] h2,
+html[lang="ne"] h3,
+html[lang="ne"] h4 {
+  font-family: 'Noto Sans Devanagari', 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* ── Snowy mountain motif at the very top (above everything) ── */
+html[lang="ne"] main::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 72ch;
+  height: 96px;
+  margin: 0.35rem auto 0.35rem;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  opacity: 0.95;
+
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'900'%20height%3D'180'%20viewBox%3D'0%200%20900%20180'%3E%3Cpath%20d%3D'M0%20138%20L90%20102%20L160%20128%20L250%2062%20L345%20130%20L430%2090%20L520%20138%20L615%2070%20L710%20132%20L790%20100%20L900%20140%20L900%20180%20L0%20180%20Z'%20fill%3D'rgba(160%2C106%2C54%2C0.45)'/%3E%3Cpath%20d%3D'M250%2062%20L220%2082%20L250%2096%20L278%2082%20Z'%20fill%3D'rgba(255%2C255%2C255%2C0.85)'/%3E%3Cpath%20d%3D'M615%2070%20L585%2089%20L615%20104%20L643%2088%20Z'%20fill%3D'rgba(255%2C255%2C255%2C0.85)'/%3E%3Cpath%20d%3D'M430%2090%20L408%20105%20L430%20116%20L450%20104%20Z'%20fill%3D'rgba(255%2C255%2C255%2C0.75)'/%3E%3Cpath%20d%3D'M90%20102%20L70%20116%20L90%20126%20L108%20116%20Z'%20fill%3D'rgba(255%2C255%2C255%2C0.65)'/%3E%3C/svg%3E");
+}
+
+html[lang="ne"].dark main::before {
+  opacity: 0.85;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'900'%20height%3D'180'%20viewBox%3D'0%200%20900%20180'%3E%3Cpath%20d%3D'M0%20138%20L90%20102%20L160%20128%20L250%2062%20L345%20130%20L430%2090%20L520%20138%20L615%2070%20L710%20132%20L790%20100%20L900%20140%20L900%20180%20L0%20180%20Z'%20fill%3D'rgba(192%2C138%2C82%2C0.35)'/%3E%3Cpath%20d%3D'M250%2062%20L220%2082%20L250%2096%20L278%2082%20Z'%20fill%3D'rgba(239%2C231%2C221%2C0.80)'/%3E%3Cpath%20d%3D'M615%2070%20L585%2089%20L615%20104%20L643%2088%20Z'%20fill%3D'rgba(239%2C231%2C221%2C0.80)'/%3E%3Cpath%20d%3D'M430%2090%20L408%20105%20L430%20116%20L450%20104%20Z'%20fill%3D'rgba(239%2C231%2C221%2C0.70)'/%3E%3Cpath%20d%3D'M90%20102%20L70%20116%20L90%20126%20L108%20116%20Z'%20fill%3D'rgba(239%2C231%2C221%2C0.60)'/%3E%3C/svg%3E");
+}
+
+/* ── Prayer flags garland above the main title (replaces old “lintel”) ── */
+html[lang="ne"] h1::before {
+  content: "";
+  display: block;
+  height: 44px;
+  margin: 0.15rem auto 0.55rem;
+  width: 100%;
+  max-width: 62ch;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  /* light-mode flags */
+  background-image: url("data:image/svg+xml,REPLACE_ME_LIGHT");
+}
+
+/* dark-mode flags */
+html[lang="ne"].dark h1::before {
+  background-image: url("data:image/svg+xml,REPLACE_ME_DARK");
+}
+
+/* Replace placeholders with the encoded SVGs */
+html[lang="ne"] h1::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27640%27%20height%3D%2760%27%20viewBox%3D%270%200%20640%2060%27%3E%0A%20%20%3Cpath%20d%3D%27M20%2038%20Q320%202%20620%2038%27%20fill%3D%27none%27%20stroke%3D%27%23a06a36%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20opacity%3D%270.9%27%2F%3E%0A%20%20%3Cg%20opacity%3D%270.95%27%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2788%2C22%20112%2C20%20112%2C44%2088%2C46%27%20fill%3D%27%232a6fdb%27%20opacity%3D%270.65%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27128%2C20%20152%2C18%20152%2C44%20128%2C46%27%20fill%3D%27%23f7f2e8%27%20opacity%3D%270.75%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27168%2C18%20192%2C16%20192%2C44%20168%2C46%27%20fill%3D%27%23d04a3a%27%20opacity%3D%270.62%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27208%2C16%20232%2C14%20232%2C44%20208%2C46%27%20fill%3D%27%233c8b5a%27%20opacity%3D%270.62%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27248%2C14%20272%2C12%20272%2C44%20248%2C46%27%20fill%3D%27%23e0b24a%27%20opacity%3D%270.68%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27368%2C12%20392%2C14%20392%2C44%20368%2C46%27%20fill%3D%27%232a6fdb%27%20opacity%3D%270.62%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27408%2C14%20432%2C16%20432%2C44%20408%2C46%27%20fill%3D%27%23f7f2e8%27%20opacity%3D%270.72%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27448%2C16%20472%2C18%20472%2C44%20448%2C46%27%20fill%3D%27%23d04a3a%27%20opacity%3D%270.62%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27488%2C18%20512%2C20%20512%2C44%20488%2C46%27%20fill%3D%27%233c8b5a%27%20opacity%3D%270.62%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27528%2C20%20552%2C22%20552%2C44%20528%2C46%27%20fill%3D%27%23e0b24a%27%20opacity%3D%270.68%27%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+}
+
+html[lang="ne"].dark h1::before {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27640%27%20height%3D%2760%27%20viewBox%3D%270%200%20640%2060%27%3E%0A%20%20%3Cpath%20d%3D%27M20%2038%20Q320%202%20620%2038%27%20fill%3D%27none%27%20stroke%3D%27%23c08a52%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20opacity%3D%270.95%27%2F%3E%0A%20%20%3Cg%20opacity%3D%270.98%27%3E%0A%20%20%20%20%3Cpolygon%20points%3D%2788%2C22%20112%2C20%20112%2C44%2088%2C46%27%20fill%3D%27%2367a7ff%27%20opacity%3D%270.78%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27128%2C20%20152%2C18%20152%2C44%20128%2C46%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.78%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27168%2C18%20192%2C16%20192%2C44%20168%2C46%27%20fill%3D%27%23ff7a64%27%20opacity%3D%270.76%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27208%2C16%20232%2C14%20232%2C44%20208%2C46%27%20fill%3D%27%236ad19b%27%20opacity%3D%270.74%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27248%2C14%20272%2C12%20272%2C44%20248%2C46%27%20fill%3D%27%23ffd37a%27%20opacity%3D%270.78%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27368%2C12%20392%2C14%20392%2C44%20368%2C46%27%20fill%3D%27%2367a7ff%27%20opacity%3D%270.76%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27408%2C14%20432%2C16%20432%2C44%20408%2C46%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.76%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27448%2C16%20472%2C18%20472%2C44%20448%2C46%27%20fill%3D%27%23ff7a64%27%20opacity%3D%270.74%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27488%2C18%20512%2C20%20512%2C44%20488%2C46%27%20fill%3D%27%236ad19b%27%20opacity%3D%270.74%27%20%2F%3E%0A%20%20%20%20%3Cpolygon%20points%3D%27528%2C20%20552%2C22%20552%2C44%20528%2C46%27%20fill%3D%27%23ffd37a%27%20opacity%3D%270.78%27%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+}
+
+/* ── Nepali HR (centered + little end caps) ── */
+html[lang="ne"] hr {
+  position: relative;
+  border: none;
+  height: 1px;
+  max-width: 62ch;
+  margin: 1.5rem auto;
+  background: rgba(31, 27, 23, 0.32);
+}
+
+html[lang="ne"] hr::before,
+html[lang="ne"] hr::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 3px;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+html[lang="ne"] hr::before { left: 0; }
+html[lang="ne"] hr::after { right: 0; }
+
+html[lang="ne"].dark hr {
+  background: rgba(239, 231, 221, 0.24);
+}
+
+/* Nepali links (underline, plus your khukuri cursor) */
+html[lang="ne"] a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(140, 43, 29, 0.5);
+  border-bottom: none;
+
+  cursor: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20fill%3D'%238b1d2c'%20d%3D'M3%2020c6-1%2010-5%2013-9%202-3%205-4%205-4-2%205-3%208-6%2011-3%203-7%205-12%206z'/%3E%3Ccircle%20cx%3D'6'%20cy%3D'18'%20r%3D'1.5'%20fill%3D'%231a1a1a'/%3E%3C/svg%3E") 2 22, pointer;
+}
+
+html[lang="ne"] a:hover {
+  text-decoration-color: currentColor;
+  animation: ne-vibrate 0.12s linear 2;
+}
+
+html[lang="ne"].dark a {
+  text-decoration-color: rgba(209, 122, 95, 0.6);
+}
+
+@keyframes ne-vibrate {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(0.5px, -0.5px); }
+  50% { transform: translate(-0.5px, 0.5px); }
+  75% { transform: translate(0.5px, 0.5px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html[lang="ne"] a:hover { animation: none; }
+  html[lang="ne"] a { transition: none; }
+}
+
+/* Text selection color (Nepali page) */
+html[lang="ne"] ::selection {
+  background: #f0b44d;
+  color: #1b1a17;
+}
+
+/* Make keyboard focus visible on Nepali page */
+html[lang="ne"] a:focus-visible,
+html[lang="ne"] button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Nepali song list: compact minimalist (no boxes)
+   ───────────────────────────────────────────────────────────── */
+
+/* Topic navigation for /ne/ page sections */
+html[lang="ne"] .ne-topic-nav {
+  width: 100%;
+  max-width: 62ch;
+  margin: 0.5rem auto 1.1rem;
+  padding: 0.45rem 0.8rem;
+  border-top: 1px solid rgba(160, 106, 54, 0.32);
+  border-bottom: 1px solid rgba(160, 106, 54, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+  font-family: 'Noto Sans Devanagari', 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html[lang="ne"].dark .ne-topic-nav {
+  border-top-color: rgba(192, 138, 82, 0.38);
+  border-bottom-color: rgba(192, 138, 82, 0.38);
+}
+
+html[lang="ne"] .ne-topic-nav-label {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+html[lang="ne"] .ne-topic-nav .ne-topic-link {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+}
+
+/* Anchor links don't get hidden when jumping to sections */
+html[lang="ne"] .ne-topic-section {
+  scroll-margin-top: 1.5rem;
+}
+
+/* Avoid jitter on nav hover from the global link animation */
+html[lang="ne"] .ne-topic-nav a:hover {
+  animation: none;
+}
+
+html[lang="ne"] .ne-generic-list {
+  width: 100%;
+  max-width: 70ch;
+  margin: 0.75rem auto 1.35rem;
+  text-align: left;
+}
+
+html[lang="ne"] .ne-generic-list li {
+  margin: 0.35rem 0;
+}
+
+html[lang="ne"] .ne-generic-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Editorial compromise:
+   - Page overall is centered
+   - Song list is left-aligned for readability
+   - Two columns on larger screens
+*/
+html[lang="ne"] .song-list {
+  width: 100%;
+  max-width: 70ch;
+  margin: 0.9rem auto 1.4rem;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem 1.25rem;
+
+  text-align: left;
+}
+
+@media (min-width: 760px) {
+  html[lang="ne"] .song-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+html[lang="ne"] .song-card {
+  padding: 0.1rem 0 0.25rem;
+  border: none;
+  border-bottom: 1px dotted rgba(31, 27, 23, 0.20);
+}
+
+html[lang="ne"].dark .song-card {
+  border-bottom-color: rgba(239, 231, 221, 0.18);
+}
+
+html[lang="ne"] .song-title,
+html[lang="ne"] .song-meta {
+  display: inline;
+}
+
+html[lang="ne"] .song-title a {
+  font-family: 'Noto Sans Devanagari', 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--link);
+}
+
+html[lang="ne"] .song-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+html[lang="ne"] .song-meta::before {
+  content: " · ";
+  opacity: 0.75;
+}
+
+html[lang="ne"] .song-note {
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+  color: rgba(90, 79, 71, 0.95);
+}
+
+html[lang="ne"].dark .song-note {
+  color: rgba(199, 188, 177, 0.92);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Nepali page block elements tuned for centered layout
+   ───────────────────────────────────────────────────────────── */
+
+html[lang="ne"] p {
+  margin: 0.65rem 0 1.05rem;
+  color: var(--fg);
+}
+
+/* Centered h2 underline (better with centered headings) */
+html[lang="ne"] h2 {
+  border-bottom: none;
+  padding-bottom: 0.35rem;
+  position: relative;
+}
+
+html[lang="ne"] h2::after {
+  content: "";
+  display: block;
+  width: 7rem;
+  height: 1px;
+  margin: 0.45rem auto 0;
+  background: rgba(160, 106, 54, 0.45);
+}
+
+html[lang="ne"].dark h2::after {
+  background: rgba(192, 138, 82, 0.42);
+}
+
+/* Center-friendly blockquote (no left bar) */
+html[lang="ne"] blockquote {
+  margin: 1.1rem 0;
+  padding: 0.8rem 0;
+  border-left: none;
+  border-top: 1px solid rgba(160, 106, 54, 0.35);
+  border-bottom: 1px solid rgba(160, 106, 54, 0.35);
+  color: var(--muted);
+  text-align: center;
+}
+
+html[lang="ne"].dark blockquote {
+  border-top-color: rgba(192, 138, 82, 0.28);
+  border-bottom-color: rgba(192, 138, 82, 0.28);
+}
+
+/* Lists: keep them readable even on centered page */
+html[lang="ne"] ul,
+html[lang="ne"] ol {
+  padding-left: 0;
+  list-style-position: inside;
+  text-align: left;
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Drop cap for the first paragraph: disabled (kept) */
+html[lang="ne"] main > p:first-of-type::first-letter {
+  font-size: inherit;
+  float: none;
+  line-height: inherit;
+  padding-right: 0;
+  color: inherit;
+}
+
+/* Nepali footer styling */
+html[lang="ne"] footer {
+  font-family: 'Noto Sans Devanagari', 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+html[lang="ne"] .lang-btn {
+  border: none;
+  padding-left: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Global rules (base styles)
+   ───────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4 {
+  font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.2px;
+  margin: 1.4rem 0 0.6rem;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0.2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.2rem;
+}
+
+p {
+  margin: 0.6rem 0 1rem;
+  color: var(--fg);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--accent);
+  margin: 1.5rem 0;
+  clear: both;
+}
+
+/* Keep the first divider close to the header even with a floated avatar */
+main hr:first-of-type {
+  clear: none;
+  margin-top: 0.75rem;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  border-bottom-color: currentColor;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+/* ────── Theme-toggle icon ────── */
 #theme-toggle {
   position: fixed;
   top: 1rem;
@@ -9,16 +488,17 @@
   width: 2.5rem;
   height: 2.5rem;
   padding: 0;
-  border: 2px solid var(--fg);
-  background: transparent;
+  border: 1px solid var(--accent);
+  background: var(--bg);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* half‑white/half‑black circle */
+/* half-white/half-black circle */
 #theme-toggle::before {
   content: "";
   width: 1.2rem;
@@ -31,20 +511,28 @@
 footer {
   margin: 40px 0 20px;
   padding-top: 20px;
-  border-top: 1px solid currentColor;
-  font-size: 14px;
+  border-top: 1px solid var(--accent);
+  font-size: 0.9rem;
   text-align: center;
   color: inherit;
 }
 
-/* ── Publication “cards” ── */
-/* bottom of assets/css/style.css */
+footer p {
+  margin: 0;
+}
 
+footer .lang-btn {
+  margin-left: 0.55rem;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+/* ── Publication “cards” ── */
 .pub-entry {
   margin: 1.5em 0;
-  padding-left: 0.75em;
-  border-left: 2px solid var(--fg);
-  font-size: 0.9em;
+  padding-left: 0.9em;
+  border-left: 2px solid var(--accent);
+  font-size: 0.95em;
 }
 
 .pub-title,
@@ -61,14 +549,13 @@ footer {
 
 .pub-authors strong {
   font-weight: bold;
-  /* your name will appear bold */
 }
 
 .pub-note {
   font-size: 0.9em;
   font-style: italic;
   margin-bottom: 0.2em;
-  color: var(--fg);
+  color: var(--muted);
 }
 
 .pub-links {
@@ -84,16 +571,15 @@ footer {
 /* ─── Footer & language switcher ─── */
 .site-footer {
   margin-top: 4em;
-  /* space before footer */
   padding: 1em 0;
   text-align: center;
-  border-top: 1px solid var(--fg);
+  border-top: 1px solid var(--accent);
 }
 
 .site-footer .lang-btn {
   display: inline-block;
   padding: 0.25em 0.75em;
-  border: 2px solid var(--fg);
+  border: 1px solid var(--accent);
   border-radius: 0.25rem;
   background: transparent;
   color: var(--fg);

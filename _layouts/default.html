@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
 <head>
   <meta charset="UTF-8">
@@ -13,57 +13,57 @@
 
   <!-- ─── Critical CSS (inline minimal rules for header/profileswitcher etc) ─── -->
   <style>
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('{{ "/assets/fonts/Inter-Regular.woff2" | relative_url }}') format('woff2');
-    }
-
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('{{ "/assets/fonts/Inter-Bold.woff2" | relative_url }}') format('woff2');
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
 
     :root {
-      --bg: #fff;
-      --fg: #000;
+      --bg: #faf9f6;
+      --bg-accent: #f2efe9;
+      --fg: #1a1a1a;
+      --muted: #4a4a4a;
+      --link: #1f4e79;
+      --accent: #b6a37d;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #000;
-        --fg: #fff;
+        --bg: #1a1a1a;
+        --bg-accent: #141414;
+        --fg: #e8e6e3;
+        --muted: #c9c6c2;
+        --link: #79a9d1;
+        --accent: #8c7a5c;
       }
     }
 
     /* 2. When the user explicitly chooses, we add .light or .dark to <html> */
     /* Explicit overrides for toggle */
     html.light {
-      --bg: #ffffff;
-      --fg: #000000;
-      --link: #307943;
+      --bg: #faf9f6;
+      --bg-accent: #f2efe9;
+      --fg: #1a1a1a;
+      --muted: #4a4a4a;
+      --link: #1f4e79;
+      --accent: #b6a37d;
     }
 
     html.dark {
-      --bg: #302e2e;
-      --fg: #e0e0e0;
-      --link: #32a852;
+      --bg: #1a1a1a;
+      --bg-accent: #141414;
+      --fg: #e8e6e3;
+      --muted: #c9c6c2;
+      --link: #79a9d1;
+      --accent: #8c7a5c;
     }
 
     /* 3. Base rules use the vars */
     html {
-      background: var(--bg);
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%);
       color: var(--fg);
-      font-family: 'Inter', system-ui, -apple-system, Arial, Helvetica, sans-serif;
-      line-height: 1.4;
-      max-width: 40em;
+      font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+      max-width: 52rem;
       margin: auto;
-      padding: 1em;
+      padding: 1.25rem;
     }
 
     @media (max-width: 600px) {
@@ -78,25 +78,25 @@
       width: 6em;
       height: 6em;
       object-fit: cover;
-      border-radius: 0.5rem;
+      border-radius: 0.6rem;
       /* <-- was 50% (circle), now rounded square */
       margin: 0 auto 1em;
-      border: 2px solid var(--fg);
+      border: 1px solid var(--accent);
     }
 
     /* Larger screens: float + bigger square with same corner radius */
     @media (min-width: 600px) {
       html {
-        max-width: 60em;
+        max-width: 60rem;
       }
 
       .profile-img {
-        float: left;
+        float: right;
         width: 8em;
         height: 8em;
-        margin: 0 1.5em 1em 0;
+        margin: 0 0 1em 1.5em;
         object-fit: cover;
-        border-radius: 0.5rem;
+        border-radius: 0.6rem;
         /* <-- match the base rule */
       }
     }
@@ -129,12 +129,13 @@
 
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a
-        href="https://perfectmotherfuckingwebsite.com/">the perfect website</a>.</p>
-    {% if page.lang == 'en' %}
-    <a href="/ne/" class="lang-btn" aria-label="Switch to Nepali">ने</a>
-    {% else %}
-    <a href="/" class="lang-btn" aria-label="Switch to English">En</a>
-    {% endif %}
+        href="https://perfectmotherfuckingwebsite.com/">the perfect website</a>.
+      {% if page.lang == 'en' %}
+      <a href="/ne/" class="lang-btn" aria-label="Switch to Nepali">ने</a>
+      {% else %}
+      <a href="/" class="lang-btn" aria-label="Switch to English">En</a>
+      {% endif %}
+    </p>
   </footer>
 
   <!-- theme toggle button -->
@@ -155,14 +156,56 @@
         root.classList.add('light');
       }
       // 2. on click, flip light<->dark and persist
-      btn.addEventListener('click', () => {
-        if (root.classList.contains('dark')) {
-          root.classList.replace('dark', 'light');
-          localStorage.setItem('theme', 'light');
-        } else {
-          root.classList.replace('light', 'dark');
-          localStorage.setItem('theme', 'dark');
-        }
+      if (btn) {
+        btn.addEventListener('click', () => {
+          if (root.classList.contains('dark')) {
+            root.classList.replace('dark', 'light');
+            localStorage.setItem('theme', 'light');
+          } else {
+            root.classList.replace('light', 'dark');
+            localStorage.setItem('theme', 'dark');
+          }
+        });
+      }
+
+      // Hidden /ne/ style toggle: triple-click title to cycle torana -> dhaka -> paubha.
+      if (root.lang !== 'ne') return;
+
+      const vibeKey = 'ne-theme-vibe';
+      const vibeOrder = ['torana', 'dhaka', 'paubha'];
+      const params = new URLSearchParams(window.location.search);
+      const queryVibe = (params.get('v') || '').toLowerCase();
+      const storedVibe = (localStorage.getItem(vibeKey) || '').toLowerCase();
+
+      function normalizeVibe(value) {
+        return vibeOrder.includes(value) ? value : null;
+      }
+
+      const initialVibe = normalizeVibe(queryVibe) || normalizeVibe(storedVibe) || 'torana';
+      root.dataset.neTheme = initialVibe;
+      localStorage.setItem(vibeKey, initialVibe);
+
+      const heading = document.querySelector('main h1');
+      if (!heading) return;
+
+      let clickCount = 0;
+      let clickResetTimer = null;
+
+      heading.addEventListener('click', () => {
+        clickCount += 1;
+        window.clearTimeout(clickResetTimer);
+        clickResetTimer = window.setTimeout(() => {
+          clickCount = 0;
+        }, 700);
+
+        if (clickCount < 3) return;
+
+        clickCount = 0;
+        const currentVibe = normalizeVibe(root.dataset.neTheme) || 'torana';
+        const nextVibeIndex = (vibeOrder.indexOf(currentVibe) + 1) % vibeOrder.length;
+        const nextVibe = vibeOrder[nextVibeIndex];
+        root.dataset.neTheme = nextVibe;
+        localStorage.setItem(vibeKey, nextVibe);
       });
     })();
   </script>

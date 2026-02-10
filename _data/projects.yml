@@ -1,0 +1,6 @@
+- title: AI Assisted Smartphone Microscopy (2024)
+  description: Built and deployed a role-based web platform that enabled multi-site collection and annotation of 400K+ microscopic images using Django; benchmarked state-of-the-art object detection models for parasite detection on these images.
+- title: Lower Limb Angle Measurement for Corrective Osteotomy (2023)
+  description: Built and deployed a CT-scan-based pipeline using U-Net/nnU-Net for bone segmentation and landmark detection to automatically compute lower-limb alignment angles, containerized with Docker and served via Flask for clinical-style use.
+- title: Public Discourse Analysis System (2022)
+  description: Architectured a real-time tweet analysis platform using Flask and MongoDB; containerized the application with Docker for scalable deployment.

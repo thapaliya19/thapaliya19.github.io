@@ -1,0 +1,31 @@
+# Nepali songs data
+# schema:
+# - title: <string>
+#   artist: <string>
+#   link: <url>
+#   note: <optional string>
+
+- title: "समर्पण"
+  artist: "सबिन राई"
+  link: "https://www.youtube.com/watch?v=8jbbH9KYKG8"
+- title: "म कही कतै"
+  artist: "भक्त राज आचार्य "
+  link: "https://youtu.be/Q6DNVCwW9fs?si=32zESB4Ewcca-BDN"
+- title: "जुनकिरी"
+  artist: "बिपुल छेत्री"
+  link: "https://www.youtube.com/watch?v=56hhDndCQ4o"
+- title: "अरबौ मन्छेहरुमा"
+  artist: "मदन कृष्ण श्रेष्ठ"
+  link: "https://youtu.be/yiP_J8cSGn4?si=n42_eZLWuTskKJsb"
+- title: "फूल"
+  artist: "सुजन चापागाई"
+  link: "https://youtu.be/DXStTwh9SSA?si=Msz2HCAFT-eaQpyB"
+- title: "निशब्द"
+  artist: "उज्ज्वल सागर"
+  link: "https://youtu.be/TGPZJELpVMo?si=dLSt9unIjz35Tj3G"
+- title: "धुन"
+  artist: "रकहेडस"
+  link: "https://youtu.be/uXN6wT9Qz18?si=Jhzq24WeI12POe4m"
+- title: "फेथ"
+  artist: "लिन्किन पार्क"
+  link: "https://youtu.be/LYU-8IFcDPw?si=CthcUSjpyX-nz2C9"

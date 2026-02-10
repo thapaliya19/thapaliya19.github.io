@@ -1,0 +1,13 @@
+# Nepali page section registry.
+# Add new topics by creating a new _data/<file>.yml and adding an entry here.
+#
+# Supported section types:
+# - songs: expects items like {title, artist, link, note?}
+# - list: generic fallback expects {title, description?, link?}
+
+- id: songs
+  nav_label: गीत
+  title: मनपर्ने गीतहरू
+  type: songs
+  data_file: songs_ne
+  description: यहाँ मेरा मनपर्ने केही गीतहरू छन्। गीतहरु त धेरै छन मनपर्ने, यहाँ थोरै राखेको छु, ऐले यही सुन्दै गर, बाकी पछी राख्दै जान्छु ल

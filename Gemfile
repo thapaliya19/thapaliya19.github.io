@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.4.5"
+ruby "3.4.1"
 # Specify your Jekyll version (4.x is currently the stable series)
 gem "jekyll", "~> 4.4.1"
 
