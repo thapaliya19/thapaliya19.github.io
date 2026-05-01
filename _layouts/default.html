@@ -13,46 +13,50 @@
 
   <!-- ─── Critical CSS (inline minimal rules for header/profileswitcher etc) ─── -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
 
     :root {
-      --bg: #faf9f6;
-      --bg-accent: #f2efe9;
+      --bg: #f6f5f1;
+      --bg-accent: #ebe9e2;
       --fg: #1a1a1a;
       --muted: #4a4a4a;
-      --link: #1f4e79;
-      --accent: #b6a37d;
+      --link: #1a4d57;
+      --accent: #a8997d;
+      --rule: rgba(26, 26, 26, 0.18);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1a1a1a;
-        --bg-accent: #141414;
-        --fg: #e8e6e3;
-        --muted: #c9c6c2;
-        --link: #79a9d1;
-        --accent: #8c7a5c;
+        --bg: #1d1b18;
+        --bg-accent: #14110d;
+        --fg: #ece6da;
+        --muted: #b8b0a2;
+        --link: #8fc8c0;
+        --accent: #b09b78;
+        --rule: rgba(236, 230, 218, 0.20);
       }
     }
 
     /* 2. When the user explicitly chooses, we add .light or .dark to <html> */
     /* Explicit overrides for toggle */
     html.light {
-      --bg: #faf9f6;
-      --bg-accent: #f2efe9;
+      --bg: #f6f5f1;
+      --bg-accent: #ebe9e2;
       --fg: #1a1a1a;
       --muted: #4a4a4a;
-      --link: #1f4e79;
-      --accent: #b6a37d;
+      --link: #1a4d57;
+      --accent: #a8997d;
+      --rule: rgba(26, 26, 26, 0.18);
     }
 
     html.dark {
-      --bg: #1a1a1a;
-      --bg-accent: #141414;
-      --fg: #e8e6e3;
-      --muted: #c9c6c2;
-      --link: #79a9d1;
-      --accent: #8c7a5c;
+      --bg: #1d1b18;
+      --bg-accent: #14110d;
+      --fg: #ece6da;
+      --muted: #b8b0a2;
+      --link: #8fc8c0;
+      --accent: #b09b78;
+      --rule: rgba(236, 230, 218, 0.20);
     }
 
     /* 3. Base rules use the vars */
@@ -128,7 +132,7 @@
   </main>
 
   <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} | Inspired from <a
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} · Updated {{ site.time | date: '%b %Y' }} · Inspired by <a
         href="https://perfectmotherfuckingwebsite.com/">the perfect website</a>.
       {% if page.lang == 'en' %}
       <a href="/ne/" class="lang-btn" aria-label="Switch to Nepali">ने</a>

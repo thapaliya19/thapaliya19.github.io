@@ -2,6 +2,13 @@
 title: Safal Thapaliya
 email: safalthapaliya@gmail.com
 description: "Ph.D. student | Graph Neural Networks, Large Language Models, Multi‑modal learning & medical imaging"
+# Site-wide social-share preview default (set per-page via `image:` in front matter for overrides).
+# Ideal: a 1200×630 PNG/JPG; webp works in some scrapers but not all.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/profile.webp
 baseurl: ""            # when deploying to https://<username>.github.io or your own domain
 url: "https://safalthapaliya.com.np"
 
