@@ -1,4 +1,10 @@
 # _data/publications.yml
+- title: "Where LLM Annotators Fail: Label-Free Learning on Graphs with LLMs"
+  author: '**Safal Thapaliya**, Jiatan Huang,  Chuxu Zhang'
+  year: 2026
+  venue: arXiv pre-print
+  link: https://arxiv.org/abs/2605.27913
+  pdf: https://arxiv.org/pdf/2605.27913
 
 - title: "Semantic Refinement with LLMs for Graph Representations"
   authors: '**Safal Thapaliya**\*, Zehong Wang\*, Jiazheng Li, Ziming Li, Yanfang Ye, Chuxu Zhang'
