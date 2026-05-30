@@ -1,6 +1,6 @@
 # _data/publications.yml
 - title: "Where LLM Annotators Fail: Label-Free Learning on Graphs with LLMs"
-  author: '**Safal Thapaliya**, Jiatan Huang,  Chuxu Zhang'
+  authors: '**Safal Thapaliya**, Jiatan Huang,  Chuxu Zhang'
   year: 2026
   venue: arXiv pre-print
   link: https://arxiv.org/abs/2605.27913
