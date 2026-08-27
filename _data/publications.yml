@@ -31,6 +31,12 @@
   note: Oral
   link: "https://openreview.net/forum?id=sN3sDKkGeN"
 
+- authors: Suprim Nakarmi, Sanam Pudasaini, **Safal Thapaliya**, Pratima Upretee, Retina Shrestha, Basant Giri, Bhanu Bhakta Neupane, Bishesh Khanal
+  year: 2024
+  title: "Deep-learning assisted detection and quantification of (oo)cysts of Giardia and Cryptosporidium on smartphone microscopy images"
+  venue: Machine Learning for Biomedical Imaging
+  link: "https://www.melba-journal.org/papers/2024:014.html"
+
 # - authors: Rabin Adhikari\*, Manish Dhakal\*, **Safal Thapaliya**\*, Kanchan Poudel, Prasiddha Bhandari, Bishesh Khanal
 #   year: 2023
 #   title: "Synthetic boost: Leveraging synthetic data for enhanced vision-language segmentation in echocardiography"
