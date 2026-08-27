@@ -13,57 +13,57 @@
 
   <!-- ─── Critical CSS (inline minimal rules for header/profileswitcher etc) ─── -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
 
     :root {
-      --bg: #f6f5f1;
-      --bg-accent: #ebe9e2;
-      --fg: #1a1a1a;
-      --muted: #4a4a4a;
-      --link: #1a4d57;
-      --accent: #a8997d;
-      --rule: rgba(26, 26, 26, 0.18);
+      --bg: #ffffff;
+      --bg-accent: #fafafa;
+      --fg: #212121;
+      --muted: #6b6b6b;
+      --link: #b509ac;
+      --accent: #b509ac;
+      --rule: rgba(0, 0, 0, 0.1);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1b18;
-        --bg-accent: #14110d;
-        --fg: #ece6da;
-        --muted: #b8b0a2;
-        --link: #8fc8c0;
-        --accent: #b09b78;
-        --rule: rgba(236, 230, 218, 0.20);
+        --bg: #1c1d24;
+        --bg-accent: #161720;
+        --fg: #e8e9ee;
+        --muted: #a3a5ad;
+        --link: #d785d0;
+        --accent: #d785d0;
+        --rule: rgba(255, 255, 255, 0.13);
       }
     }
 
     /* 2. When the user explicitly chooses, we add .light or .dark to <html> */
     /* Explicit overrides for toggle */
     html.light {
-      --bg: #f6f5f1;
-      --bg-accent: #ebe9e2;
-      --fg: #1a1a1a;
-      --muted: #4a4a4a;
-      --link: #1a4d57;
-      --accent: #a8997d;
-      --rule: rgba(26, 26, 26, 0.18);
+      --bg: #ffffff;
+      --bg-accent: #fafafa;
+      --fg: #212121;
+      --muted: #6b6b6b;
+      --link: #b509ac;
+      --accent: #b509ac;
+      --rule: rgba(0, 0, 0, 0.1);
     }
 
     html.dark {
-      --bg: #1d1b18;
-      --bg-accent: #14110d;
-      --fg: #ece6da;
-      --muted: #b8b0a2;
-      --link: #8fc8c0;
-      --accent: #b09b78;
-      --rule: rgba(236, 230, 218, 0.20);
+      --bg: #1c1d24;
+      --bg-accent: #161720;
+      --fg: #e8e9ee;
+      --muted: #a3a5ad;
+      --link: #d785d0;
+      --accent: #d785d0;
+      --rule: rgba(255, 255, 255, 0.13);
     }
 
     /* 3. Base rules use the vars */
     html {
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-accent) 100%);
+      background: var(--bg);
       color: var(--fg);
-      font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
       max-width: 52rem;
       margin: auto;

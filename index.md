@@ -26,18 +26,27 @@ Before UConn, I was a research assistant at [NAAMII](https://naamii.org.np/) und
 
 {% for pub in site.data.publications %}
 <div class="pub-entry">
-  <div class="pub-head">
-    <div class="pub-title"><a href="{{ pub.link }}"><strong>{{ pub.title }}</strong></a></div>
-    <div class="pub-year">{{ pub.year }}</div>
+  <div class="pub-thumb">
+    {% if pub.image %}
+      <img src="{{ pub.image }}" alt="">
+    {% else %}
+      <span class="pub-thumb-placeholder">{{ pub.year }}</span>
+    {% endif %}
   </div>
-  <div class="pub-authors">{{ pub.authors | markdownify }}</div>
-  <div class="pub-venue"><i>{{ pub.venue }}</i></div>
-  {% if pub.note %}
-  <div class="pub-note">{{ pub.note }}</div>
-  {% endif %}
-  <div class="pub-links">
-    {% if pub.pdf %}<a href="{{ pub.pdf }}">PDF</a>{% endif %}
-    {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
+  <div class="pub-body">
+    <div class="pub-head">
+      <div class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></div>
+      <div class="pub-year">{{ pub.year }}</div>
+    </div>
+    <div class="pub-authors">{{ pub.authors | markdownify }}</div>
+    <div class="pub-venue"><i>{{ pub.venue }}</i></div>
+    {% if pub.note %}
+    <div class="pub-note">{{ pub.note }}</div>
+    {% endif %}
+    <div class="pub-links">
+      {% if pub.pdf %}<a href="{{ pub.pdf }}">PDF</a>{% endif %}
+      {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
+    </div>
   </div>
 </div>
 {% endfor %}
@@ -50,17 +59,31 @@ For a complete list of publications, see my [Google Scholar](https://scholar.goo
 ## Projects
 
 {% for project in site.data.projects %}
+{% assign proj_year = project.title | split: "(" | last | replace: ")", "" | strip %}
+{% assign proj_name = project.title | split: "(" | first | strip %}
 <div class="pub-entry">
-  <div class="pub-title">
-    {% if project.link %}
-      <a href="{{ project.link }}"><strong>{{ project.title }}</strong></a>
+  <div class="pub-thumb">
+    {% if project.image %}
+      <img src="{{ project.image }}" alt="">
     {% else %}
-      <strong>{{ project.title }}</strong>
+      <span class="pub-thumb-placeholder">{{ proj_year }}</span>
     {% endif %}
   </div>
-  <div class="pub-authors">{{ project.description | markdownify }}</div>
-  {% if project.link and project.link_text %}
-  <div class="pub-links"><a href="{{ project.link }}">{{ project.link_text }}</a></div>
-  {% endif %}
+  <div class="pub-body">
+    <div class="pub-head">
+      <div class="pub-title">
+        {% if project.link %}
+          <a href="{{ project.link }}">{{ proj_name }}</a>
+        {% else %}
+          {{ proj_name }}
+        {% endif %}
+      </div>
+      <div class="pub-year">{{ proj_year }}</div>
+    </div>
+    <div class="pub-authors">{{ project.description | markdownify }}</div>
+    {% if project.link and project.link_text %}
+    <div class="pub-links"><a href="{{ project.link }}">{{ project.link_text }}</a></div>
+    {% endif %}
+  </div>
 </div>
 {% endfor %}
