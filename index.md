@@ -5,85 +5,59 @@ lang: en
 permalink: /
 ---
 
-![Photo of Safal Thapaliya](/assets/img/profile.webp){: .profile-img }
+<section class="section section-plain" markdown="1">
 
-# Safal Thapaliya
-
-<div class="contact-line" markdown="1">
-[Email](mailto:safalthapaliya@gmail.com) · [Scholar](https://scholar.google.com/citations?user=0yl8rVYAAAAJ) · [LinkedIn](https://www.linkedin.com/in/thapaliya19/) · [GitHub](https://github.com/thapaliya19) · [CV](assets/pdf/safal_cv.pdf)
+<div class="hero">
+  <img src="/assets/img/profile.webp" alt="Safal Thapaliya" class="hero-avatar">
+  <div class="hero-body">
+    <h1 class="hero-name">Safal Thapaliya</h1>
+    <p class="hero-tagline">PhD student, UConn <br> LLMs, GNNs, AI for healthcare.</p>
+    <div class="hero-links">
+      <a href="mailto:safal.thapaliya[at]uconn.edu">safal.thapaliya[at]uconn.edu</a> · <a href="https://scholar.google.com/citations?user=0yl8rVYAAAAJ">scholar</a> · <a href="https://www.linkedin.com/in/thapaliya19/">linkedIn</a> · <a href="https://github.com/thapaliya19">github</a> · <a href="/assets/pdf/safal_cv.pdf">cv</a>
+    </div>
+  </div>
 </div>
 
----
+## bio
 
-Hello there. I'm a second-year PhD student at the [University of Connecticut](https://uconn.edu/)'s [School of Computing](https://computing.engineering.uconn.edu/), advised by [Prof. Chuxu Zhang](https://chuxuzhang.github.io/). My work sits at the intersection of large language models, resource-efficient ML, trustworthy graph neural networks, and AI for healthcare.
+I'm a second year PhD student in Computer Science and Engineering at the University of Connecticut working on large language models, graph neural networks, and AI for healthcare. Before UConn, I built healthcare AI prototypes and vision-language segmentation models at NAAMII in Nepal. 
 
-Before UConn, I was a research assistant at [NAAMII](https://naamii.org.np/) under [Dr. Bishesh Khanal](https://bishesh.github.io/), where I worked on vision-language models, medical image segmentation, and object detection, and shipped healthcare AI prototypes alongside [KIAS](https://kias.org.np/) and [Dr. Taman Upadhaya](https://www.linkedin.com/in/tamanupadhaya/). I earned my B.E. in Computer Engineering from [IOE, Pulchowk Campus](http://pcampus.edu.np/) in 2022. Earlier, I was a founding developer at [Clamphook](https://clamphook.com/) (2019–2022) and interned at [Logpoint](https://logpoint.com/en/) on Linux server administration and distributed log handling.
+I love to play football (not the american one) and watch any sports that I find interesting.
 
----
 
-## Publications
-\* indicates equal contribution
+</section>
 
+<section class="section section-lokta" markdown="1">
+
+<div class="timeline">
+{% for entry in site.data.timeline %}
+<div class="tl-year">{{ entry.year }}</div>
+<div class="tl-body">{{ entry.body | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+{% endfor %}
+</div>
+
+</section>
+
+<section class="section section-plain" markdown="1">
+
+## publications
+
+<p class="pub-note">* indicates equal contribution</p>
+
+<div class="pub-list">
 {% for pub in site.data.publications %}
 <div class="pub-entry">
-  <div class="pub-thumb">
-    {% if pub.image %}
-      <img src="{{ pub.image }}" alt="">
-    {% else %}
-      <span class="pub-thumb-placeholder">{{ pub.year }}</span>
-    {% endif %}
+  <div class="pub-line">
+    <a class="pub-title" href="{{ pub.link }}">{{ pub.title }}</a>
+    <span class="pub-venue">{{ pub.venue }} {{ pub.year }}{% if pub.note %} ({{ pub.note }}){% endif %}</span>
+    {% if pub.pdf %}<a class="pub-link" href="{{ pub.pdf }}">[pdf]</a>{% endif %}
+    {% if pub.code %}<a class="pub-link" href="{{ pub.code }}">[code]</a>{% endif %}
   </div>
-  <div class="pub-body">
-    <div class="pub-head">
-      <div class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></div>
-      <div class="pub-year">{{ pub.year }}</div>
-    </div>
-    <div class="pub-authors">{{ pub.authors | markdownify }}</div>
-    <div class="pub-venue"><i>{{ pub.venue }}</i></div>
-    {% if pub.note %}
-    <div class="pub-note">{{ pub.note }}</div>
-    {% endif %}
-    <div class="pub-links">
-      {% if pub.pdf %}<a href="{{ pub.pdf }}">PDF</a>{% endif %}
-      {% if pub.code %}<a href="{{ pub.code }}">Code</a>{% endif %}
-    </div>
-  </div>
+  <div class="pub-authors">{{ pub.authors | markdownify }}</div>
 </div>
 {% endfor %}
+</div>
 
----
 For a complete list of publications, see my [Google Scholar](https://scholar.google.com/citations?user=0yl8rVYAAAAJ).
 
----
-
-## Projects
-
-{% for project in site.data.projects %}
-{% assign proj_year = project.title | split: "(" | last | replace: ")", "" | strip %}
-{% assign proj_name = project.title | split: "(" | first | strip %}
-<div class="pub-entry">
-  <div class="pub-thumb">
-    {% if project.image %}
-      <img src="{{ project.image }}" alt="">
-    {% else %}
-      <span class="pub-thumb-placeholder">{{ proj_year }}</span>
-    {% endif %}
-  </div>
-  <div class="pub-body">
-    <div class="pub-head">
-      <div class="pub-title">
-        {% if project.link %}
-          <a href="{{ project.link }}">{{ proj_name }}</a>
-        {% else %}
-          {{ proj_name }}
-        {% endif %}
-      </div>
-      <div class="pub-year">{{ proj_year }}</div>
-    </div>
-    <div class="pub-authors">{{ project.description | markdownify }}</div>
-    {% if project.link and project.link_text %}
-    <div class="pub-links"><a href="{{ project.link }}">{{ project.link_text }}</a></div>
-    {% endif %}
-  </div>
-</div>
-{% endfor %}
+</section>
