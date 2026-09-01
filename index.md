@@ -20,7 +20,7 @@ permalink: /
 
 ## bio
 
-I'm a second year PhD student in Computer Science and Engineering at the University of Connecticut working on large language models, graph neural networks, and AI for healthcare. Before UConn, I built healthcare AI prototypes and vision-language segmentation models at NAAMII in Nepal. 
+I'm a second-year PhD student in Computer Science and Engineering at the University of Connecticut. My current research focuses on graph learning and combining large language models with graph neural networks. I am particularly interested in building methods that work well without large amounts of labeled data or compute. This focus comes from my background in Nepal, where I worked at NAAMII building healthcare AI prototypes and vision-language segmentation models for low-resource medical settings.
 
 I love to play football (not the american one) and watch any sports that I find interesting.
 
