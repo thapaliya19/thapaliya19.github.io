@@ -1,8 +1,11 @@
 # _data/timeline.yml
 # Career milestones shown in the timeline section on the homepage.
 # Each entry: year (string), body (markdown allowed).
+- year: "Nov, 2026"
+  body: "[GES](https://arxiv.org/abs/2512.21106) accepted to EACL 2027 (Main Conference)."
+
 - year: "Aug, 2026"
-  body: "[Where LLM Annotators Fail: Label-Free Learning on Graphs with LLMs](https://arxiv.org/abs/2605.27913) accepted at EMNLP Findings 2026."
+  body: "[CANE](https://arxiv.org/abs/2605.27913) accepted to EMNLP 2026 (Findings)."
 
 - year: "June, 2026"
   body: "Attended the Machine Learning Summer School 2026 at [Columbia University](https://cfe.columbia.edu/content/mlss2)."
