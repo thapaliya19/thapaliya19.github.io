@@ -1,15 +1,17 @@
 # _data/publications.yml
 - title: "Semantic Refinement with LLMs for Graph Representations"
   authors: '**Safal Thapaliya**\*, Zehong Wang\*, Jiazheng Li, Ziming Li, Yanfang Ye, Chuxu Zhang'
-  year: 
-  venue: EACL 2027 (Main)
+  year: 2027
+  venue: EACL
   link: "https://arxiv.org/abs/2512.21106"
+  note: Main
 
 - title: "Where LLM Annotators Fail: Label-Free Learning on Graphs with LLMs"
   authors: '**Safal Thapaliya**, Jiatan Huang,  Chuxu Zhang'
-  year: 
-  venue: EMNLP 2026 (Findings)
+  year: 2026
+  venue: EMNLP
   link: https://arxiv.org/abs/2605.27913
+  note: Findings
 
 - authors: Rabin Adhikari, **Safal Thapaliya**, Manish Dhakal, Bishesh Khanal
   year: 2024
